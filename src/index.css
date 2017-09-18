@@ -1,0 +1,282 @@
+html {
+  font-size: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+}
+
+button:disabled {
+  opacity: 0.5;
+}
+
+
+.timeGrid {
+  width: 400px;
+  margin: 0;
+}
+
+.table-drag-select {
+  vertical-align: top;
+  width: 350px;
+  display: inline-block;
+}
+.table-drag-select table {
+  width: 350px;
+  /* Stretch horizontally to fill parent */
+  /* Keep columns same width */
+  table-layout: fixed;
+  /* Disable text selection */
+  user-select: none;
+  /* Center in parent */
+  margin-left: 0;
+  margin-right: 0;
+  /* Remove space between border */
+  border: 1px black solid;
+}
+
+.table-drag-select tr {
+  line-height: 8px;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+}
+
+/* Table cells */
+.table-drag-select td {
+  text-align: center;
+  /* Cut off long strings of text with ... */
+  text-overflow: ellipsis;
+  /* Make transparent gaps between cells. Better than relying on margin
+   * because clicking an element's margin doesn't trigger events */
+  /*border: 0.2em solid transparent;*/
+  border-right: 1px solid black;
+  /* Make cells reasonable size */
+  /* Shows more text when text too big to fit into cell */
+  padding-left: 0rem;
+  padding-right: 0rem;
+  margin: 0;
+}
+
+/* Cells that can be interacted with */
+.table-drag-select td.cell-enabled {
+  background-color: #dda59b;
+  /* Make the cursor a + symbol */
+}
+
+/* Cells that cannot be interacted with */
+.table-drag-select td.cell-disabled {
+  /* Put yer css here */
+}
+
+/* Cells that have been selected */
+.table-drag-select td.cell-selected {
+  background-color: #5BA93F;
+}
+
+/* Cells that are in the process of being selected */
+.table-drag-select td.cell-being-selected {
+  /* This is the blue color you see when you select text with the cursor */
+  background-color: green;
+}
+
+/* Cells that are in the process of being selected */
+.table-drag-select td.cell-being-deselected {
+  /* This is the blue color you see when you select text with the cursor */
+  background-color: #dd6757;
+}
+
+/* Cells that can be interacted with */
+.datePicker .table-drag-select td.cell-enabled {
+  background-color: white;
+  /* Make the cursor a + symbol */
+}
+
+/* Cells that have been selected */
+.datePicker .table-drag-select td.cell-selected {
+  background-color: #5BA93F;
+}
+
+/* Cells that are in the process of being selected */
+.datePicker .table-drag-select td.cell-being-selected {
+  /* This is the blue color you see when you select text with the cursor */
+  background-color: green;
+}
+
+/* Cells that are in the process of being selected */
+.datePicker .table-drag-select td.cell-being-deselected {
+  /* This is the blue color you see when you select text with the cursor */
+  background-color: #e9e9e9;
+}
+
+.specificDatePicker tr {
+  line-height: 30px;
+}
+
+.menuBar ul {
+list-style: none;
+  width: 100vw;
+  background: slategrey;
+  padding: 20px 0 20px 0;
+  margin-top: 0;
+}
+
+.menuBar ul li {
+  display: inline;
+}
+
+.menuBar ul li a {
+  padding: 20px;
+  text-decoration: none;
+  color: white;
+}
+
+.menuBar ul li a:hover {
+  background: lightslategray;
+}
+
+.menuBar .loginButton {
+  float: right;
+  position: relative;
+  top: -20px;
+}
+
+.menuBar .logo {
+  width: 100px;
+
+}
+
+.info {
+  position:fixed;
+  top: 70px;
+  left:50px;
+  width:250px;
+}
+.main {
+
+}
+.item {
+  width:50px;
+  height:5px;
+  margin:0px;
+  float:left;
+  text-align:center;
+  padding:4px;
+  background: rgb(255, 220, 220);
+  border-right: 1px solid black;
+}
+.item.selected {
+  background: rgb(0,150,0);
+
+}
+.item.selecting {
+  /*border-bottom: 1px dotted black;*/
+  background: rgb(0,150,0);
+}
+
+.item.selecting.selected{
+  background: rgb(255, 220, 220);
+}
+
+#grid-box{
+  width: 352px;
+
+  border: 1px solid black;
+}
+
+.quarter0, .quarter2{
+  border-bottom: 0px dotted black;
+}
+
+.quarter1{
+  border-bottom: 1px dotted black;
+}
+
+.quarter3{
+  border-bottom: 1px solid black;
+}
+
+.datePicker .quarter0, .datePicker .quarter1, .datePicker .quarter2, .datePicker .quarter3 {
+  border-bottom: 1px solid black;
+}
+
+.colHeader {
+  display: inline-block;
+  width: 50px;
+  text-align: center;
+}
+
+.rowHeaders {
+  width: 50px;
+  display: inline-block;
+  padding-right: 10px;
+  text-align: right;
+}
+.rowHeaders .rowHeader {
+  display: block;
+}
+
+.daysOfTheWeekPicker .table-drag-select table tbody tr {
+  line-height: 100px;
+}
+
+.table-drag-select table tbody {
+  background: transparent;
+}
+
+/*react-tabs */
+
+.react-tabs [role=tablist] {
+  border-bottom: 1px solid #aaa;
+  margin: 0 0 10px;
+  padding: 0;
+  text-align: center;
+}
+
+.react-tabs [role=tab] {
+  display: inline-block;
+  border: 1px solid transparent;
+  border-bottom: none;
+  bottom: -1px;
+  position: relative;
+  list-style: none;
+  padding: 6px 12px;
+  cursor: pointer;
+  position: relative;
+  width: 50%;
+}
+
+.react-tabs [role=tab][aria-selected=true] {
+  background: #fff;
+  border-color: #aaa;
+  /*border-radius: 5px 5px 0 0;
+  -moz-border-radius: 5px 5px 0 0;
+  -webkit-border-radius: 5px 5px 0 0;*/
+}
+
+.react-tabs [role=tab]:focus {
+  box-shadow: 0 0 5px hsl(208, 99%, 50%);
+  border-color: hsl(208, 99%, 50%);
+  outline: none;
+}
+
+.react-tabs [role=tab]:focus:after {
+  content: '';
+  position: absolute;
+  height: 5px;
+  left: -4px;
+  right: -4px;
+  bottom: -5px;
+  background: #fff;
+}
+
+.react-tabs [role=tabpanel] {
+  text-align: center;
+}
+
+.datePickerContainer {
+  width: 400px;
+}
